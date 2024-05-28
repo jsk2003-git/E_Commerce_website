@@ -1,0 +1,35 @@
+first file - 
+app.js
+
+make server, 
+
+
+second file - 
+Product.js
+
+for schema modelling,
+
+
+third file - 
+seed.js
+
+for inserting values in the database,
+ek function bana kr db me values insert krdo 
+export krdo app.js me seedDB() function krdo
+
+//almost all db methods like .insertMany()  return promises
+// promises create callback hell , to prevent it , we use async await..
+//which ensures ki jab tk wo task na hojaye tb tk whi ruke rho
+// async function hota hai await promise return krne wali line hoti hai.
+
+
+
+
+app.js me require krlo seed.js krdo
+
+// seeding database
+// data sirf ek baar seed kia jata hai isliye ek baar run krke comment krdete hain, //
+// kyuki nodemon ki wjh se server br br restart hota hai toh data br br seed hoga kyuki 
+// nodemon br br app.js chalayega jisme seeding ho rhi , jisse same data br br copy hoga db me 
+// isliye ek br chalakr comment krdena
+
