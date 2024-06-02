@@ -1,20 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <ul>
-      <%for( let item of products){%>
-        <li>
-            <img src="<%=item.img%>" alt="">
-            <h1><%=item.name%></h1>
-            <h3><%=item.price%></h3>
-            <p><%=item.desc%></p>
-        </li>
+<% layout("layouts/boilerplate") %>
+<%- include("../partials/navbar") %>
+<div class="row">
+
+    <%for( let item of products){%>
+
+        <div class="col-lg-4 mt-3">
+
+            <div class="card shadow mx-auto " style="width: 18rem;">
+
+                <img src="<%=item.img%>" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><%=item.name%></h5>
+                  <h5 class="card-title"><%=item.price%></h5>
+                  <p class="card-text"><%=item.desc%></p>
+                  <a href="/products/<%=item._id%>" class="btn btn-info">View Product</a>
+
+                  <form class="d-inline-block" action="/products/<%=item._id%>?_method=DELETE" method="POST">
+                    <button class="btn btn-sm btn-danger">Delete</button>
+
+                  </form>
+                </div>
+
+            </div>
+            
+        </div>
+       
        <% } %>
-    </ul>
+
+</div>
 </body>
 </html>
