@@ -19,7 +19,14 @@ const productSchema = mongoose.Schema({
     desc:{
         type:String,
         trim:true
-    }
+    },
+    reviews:[
+        {
+            // reviews array me har review ki bas id store kri jayegi usi se pura object mil jayega
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Review"
+        }
+    ]
 })
 
 //model's name is Product
